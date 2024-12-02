@@ -107,15 +107,15 @@ cron.schedule('0 0 * * *', async () => {
         let priority;
 
         if (daysLeft < 0) {
-            priority = 0; // Overdue
+            priority = 0; 
         } else if (daysLeft === 0) {
-            priority = 1; // Due today
+            priority = 1; 
         } else if (daysLeft <= 2) {
-            priority = 2; // Due in 1-2 days
+            priority = 2; 
         } else if (daysLeft <= 4) {
-            priority = 3; // Due in 3-4 days
+            priority = 3; 
         } else {
-            priority = 4; // Due in 5+ days
+            priority = 4; 
         }
 
         await Task.findByIdAndUpdate(task._id, { priority });
